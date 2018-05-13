@@ -17,17 +17,19 @@ class App extends Component {
     };
   }
 
+  listClick(event) {
+    console.log(event.target);
+  }
+
   render() {
     return (
       console.log(this.state) || (
         <ul>
           Todo List
-          {this.state.todoList.map(todo => {
-            return todo.done ? (
-              <li>{todo.item}</li>
-            ) : (
-              <li>
-                <s>{todo.item}</s>
+          {this.state.todoList.map((todo, index) => {
+            return (
+              <li key={index} onClick={this.listClick}>
+                {todo.done ? <s>{todo.item} </s> : todo.item}
               </li>
             );
           })}
