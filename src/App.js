@@ -18,13 +18,21 @@ class App extends Component {
   }
 
   render() {
-    return  console.log(this.state) ||  (
-      <ul>
-        Todo List
-        {this.state.todoList.map(todo => {
-          return <li>{todo.item}</li>;
-        })}
-      </ul>
+    return (
+      console.log(this.state) || (
+        <ul>
+          Todo List
+          {this.state.todoList.map(todo => {
+            return todo.done ? (
+              <li>{todo.item}</li>
+            ) : (
+              <li>
+                <s>{todo.item}</s>
+              </li>
+            );
+          })}
+        </ul>
+      )
     );
   }
 }
