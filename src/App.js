@@ -18,7 +18,14 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App" />;
+    return  console.log(this.state) ||  (
+      <ul>
+        Todo List
+        {this.state.todoList.map(todo => {
+          return <li>{todo.item}</li>;
+        })}
+      </ul>
+    );
   }
 }
 
