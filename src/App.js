@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 
+const List = ({todoList}) => (
+  <ul>
+    Todo List
+    {todoList.map((todo, index) => {
+      return (
+        <li key={index} onClick={this.listClick}>
+          {todo.done ? <s>{todo.item} </s> : todo.item}
+        </li>
+      );
+    })}
+  </ul>
+);
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,20 +35,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      console.log(this.state) || (
-        <ul>
-          Todo List
-          {this.state.todoList.map((todo, index) => {
-            return (
-              <li key={index} onClick={this.listClick}>
-                {todo.done ? <s>{todo.item} </s> : todo.item}
-              </li>
-            );
-          })}
-        </ul>
-      )
-    );
+    return console.log(this.state) || <List todoList={this.state.todoList} />;
   }
 }
 
