@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 const List = ({todoList}) => (
   <ul>
-    Todo List
     {todoList.map((todo, index) => {
       return (
         <li key={index} onClick={this.listClick}>
           {todo.done ? <s>{todo.item} </s> : todo.item}
+          <button>x</button>
         </li>
       );
     })}
@@ -37,7 +37,14 @@ class App extends Component {
   }
 
   render() {
-    return console.log(this.state) || <List todoList={this.state.todoList} />;
+    return console.log(this.state) ||
+      <div>
+        <h1>Todo</h1>
+        <input type="text" />
+        <button>+</button>
+
+      <List todoList={this.state.todoList} />
+      </div>;
   }
 }
 
