@@ -13,21 +13,23 @@ const List = ({todoList}) => (
   </ul>
 );
 
+let initialValue = {
+  todoList: [
+    {
+      item: 'step 1',
+      done: true,
+    },
+    {
+      item: 'step 2',
+      done: false,
+    },
+  ],
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      todoList: [
-        {
-          item: 'step 1',
-          done: true,
-        },
-        {
-          item: 'step 2',
-          done: false,
-        },
-      ],
-    };
+    this.state = initialValue;
   }
 
   listClick(event) {
