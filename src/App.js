@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const List = ({todoList}) => (
+const List = ({ todoList }) => (
   <ul>
     {todoList.map((todo, index) => {
       return (
@@ -14,6 +14,7 @@ const List = ({todoList}) => (
 );
 
 let initialValue = {
+  item: '',
   todoList: [
     {
       item: 'step 1',
@@ -36,15 +37,22 @@ class App extends Component {
     console.log(event.target);
   }
 
-  render() {
-    return console.log(this.state) ||
-      <div>
-        <h1>Todo</h1>
-        <input type="text" />
-        <button>+</button>
+  onChange(event) {
+    this.setState({ item: event.target.value });
+  }
 
-      <List todoList={this.state.todoList} />
-      </div>;
+  render() {
+    return (
+      console.log(this.state) || (
+        <div>
+          <h1>Todo</h1>
+          <input type="text" value={this.state.item} onChange={this.onChange} />
+          <button>+</button>
+
+          <List todoList={this.state.todoList} />
+        </div>
+      )
+    );
   }
 }
 
