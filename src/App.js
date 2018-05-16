@@ -31,13 +31,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = initialValue;
+    console.log(this.state);
   }
 
-  listClick(event) {
+  listClick = (event)=> {
     console.log(event.target);
   }
 
-  onChange(event) {
+  onChange = (event) => {
+    console.log('onChange', event.target.value, this.state);
     this.setState({ item: event.target.value });
   }
 
