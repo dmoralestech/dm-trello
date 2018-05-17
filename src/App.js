@@ -34,14 +34,25 @@ class App extends Component {
     console.log(this.state);
   }
 
-  listClick = (event)=> {
+  listClick = event => {
     console.log(event.target);
-  }
+  };
 
-  onChange = (event) => {
+  onChange = event => {
     console.log('onChange', event.target.value, this.state);
     this.setState({ item: event.target.value });
-  }
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+    this.setState({
+      item: '',
+      todoList: [
+        ...this.state.todoList,
+        { item: this.state.term, done: false },
+      ],
+    });
+  };
 
   render() {
     return (
