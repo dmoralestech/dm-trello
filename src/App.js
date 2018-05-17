@@ -60,7 +60,7 @@ class App extends Component {
         <div>
           <h1>Todo</h1>
           <input type="text" value={this.state.item} onChange={this.onChange} />
-          <button>+</button>
+          <button onClick={this.onSubmit}>+</button>
 
           <List todoList={this.state.todoList} />
         </div>
