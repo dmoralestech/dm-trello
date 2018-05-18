@@ -58,11 +58,16 @@ class App extends Component {
     return (
       console.log(this.state) || (
         <div>
-          <h1>Todo</h1>
-          <input type="text" value={this.state.item} onChange={this.onChange} />
-          <button onClick={this.onSubmit}>+</button>
-
-          <List todoList={this.state.todoList} />
+          <form onSubmit={this.onSubmit}>
+            <h1>Todo</h1>
+            <input
+              type="text"
+              value={this.state.item}
+              onChange={this.onChange}
+            />
+            <button>+</button>
+            <List todoList={this.state.todoList} />
+          </form>
         </div>
       )
     );
