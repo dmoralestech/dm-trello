@@ -49,7 +49,7 @@ class App extends Component {
       item: '',
       todoList: [
         ...this.state.todoList,
-        { item: this.state.term, done: false },
+        { item: this.state.item, done: false },
       ],
     });
   };
