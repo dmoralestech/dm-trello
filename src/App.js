@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TestImage from './test.png';
 
 const List = ({ todoList }) => (
   <ul>
@@ -56,7 +55,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <img src={TestImage} alt="" />
         <form onSubmit={this.onSubmit}>
           <h1>Todo</h1>
           <input type="text" value={this.state.item} onChange={this.onChange} />
